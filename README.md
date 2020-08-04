@@ -1,3 +1,7 @@
+<h1 align="center">
+    <img alt="Página Inicial" src="./landingpage.png" width="450px" />
+</h1>
+
 <h4 align="center">
   Next Level Week #2
 </h4>
@@ -20,7 +24,7 @@ Este projeto contém as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O Proffy é uma proposta de projeto que facilita a vida de professores e alunos no aprendizado do dia-a-dia, tornando possível o aluno visualizar professores disponíveis para lecionar uma matéria de seu interesse e entrar em contato com elas via WhatsApp, ou no caso de ser um professor, o mesmo pode se registar e oferecer seus serviços de estudos para novos alunos.
+O Proffy é uma proposta de projeto que busca aproximar e facilitar a vida de professores e alunos no aprendizado do dia-a-dia. É possível que o aluno visualize professores disponíveis para lecionar uma matéria de seu interesse, e entrar em contato com eles através do contato pelo WhatsApp. Já para um professor, através do WebSite, o mesmo pode se registar e oferecer seus serviços e materiais para novos alunos.
 
 ## 🔖 Como Executar
 
