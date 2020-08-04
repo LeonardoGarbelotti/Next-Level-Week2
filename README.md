@@ -40,6 +40,12 @@ No seu terminal, siga as instruções abaixo para instalar a dependência no pro
 
 cd web
 yarn add @types/react-router-dom -D
+cd ..
+cd server
+yarn add typescript -D
+yarn add ts-node-dev -D
+yarn add express
+yarn add @types/express -D
 
 ```
 É nescessário passar @types pois no projeto é utilizado linguagem tipada (TypeScript).
