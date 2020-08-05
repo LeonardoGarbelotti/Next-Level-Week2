@@ -19,8 +19,12 @@
 Este projeto contém as seguintes tecnologias:
 
 - [React](https://reactjs.org)
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Expo](https://expo.io/)
+- [Knex](http://knexjs.org/)
+- [Sqlite3](https://www.sqlite.org/index.html)
 
 ## 💻 Projeto
 
@@ -35,21 +39,20 @@ git https://github.com/LeonardoGarbelotti/Next-Level-Week2.git
 
 ```
 #### Instalação
-No seu terminal, siga as instruções abaixo para instalar a dependência no projeto.
+No seu terminal, siga as instruções abaixo para instalar as dependência no projeto.
 ```sh
 
-cd web
-yarn add @types/react-router-dom -D
-cd ..
-cd server
-yarn add typescript -D
-yarn add ts-node-dev -D
-yarn add express
-yarn add @types/express -D
+yarn install dependencies
 
 ```
-É nescessário passar @types pois no projeto é utilizado linguagem tipada (TypeScript).
 
+#### Criando o banco de dados
+Dentro da pasta *server*, executar: 
+```sh
+
+yarn knex:migrate
+
+```
 #### Iniciando a aplicação
 ```sh
 
