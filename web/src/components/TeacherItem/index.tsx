@@ -1,33 +1,56 @@
 import React from 'react';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
+import api from '../../services/api';
 
 import './styles.css';
 
-function TeacherItem() {
+
+// cria uma interface com uma variavel do tipo 'teacher'
+// essa variavel 'teacher' contém as informações vindas da api
+// e posteriormente podemos usar essas informações nos dados do cartão abaixo
+export interface Teacher {
+    id: number;
+    avatar: string;
+    bio: string;
+    cost: number;
+    name: string;
+    subject: string;
+    whatsapp: string;
+}
+
+interface TeacherItemProps {
+    teacher: Teacher;
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+    function createNewConnection() {
+        api.post('connections', {
+            user_id: teacher.id,
+        });
+    }
+
     return (
         <article className="teacher-item">
             <header>
-                <img src="https://avatars2.githubusercontent.com/u/33553479?s=460&u=fe61bb9dc09e33e35adf81e6b9ea9d772be03036&v=4" alt="Leonardo Garbelotti Gonçalves" />
+                <img src={teacher.avatar} alt={`Foto de ${teacher.name}`} />
                 <div>
-                    <strong> Leonardo Garbelotti Gonçalves</strong>
-                    <span>Macaqueísmo</span>
+                    <strong> {teacher.name} </strong>
+                    <span> {teacher.subject} </span>
                 </div>
             </header>
 
-            <p> Aprenda sobre a história e evolução do ser-humano e descubra todos os motivos, benefícios e desvantagens
-            de se retornar a macaco.
-                    </p>
+            <p> {teacher.bio} </p>
 
             <footer>
                 <p>
                     Preço/Hora
-                            <strong>R$ 30,00</strong>
+                            <strong>R$ {teacher.cost} </strong>
                 </p>
 
-                <button type="button">
+                <a onClick={createNewConnection} target="_blank" href={`https://wa.me/${teacher.whatsapp}?text=Olá!%20Estou%20interessado(a)%20em%20suas%20aulas!`}>
                     <img src={whatsappIcon} alt="whatsapp" />
                             Entrar em Contato!
-                        </button>
+                </a>
             </footer>
         </article>
     );
